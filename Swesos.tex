@@ -1,0 +1,199 @@
+% This is LLNCS.DEM the demonstration file of
+% the LaTeX macro package from Springer-Verlag
+% for Lecture Notes in Computer Science,
+% version 2.4 for LaTeX2e as of 16. April 2010
+%
+\documentclass{llncs}
+%
+\usepackage{makeidx}  % allows for indexgeneration
+\usepackage{amsmath}
+
+\usepackage{url}
+
+\usepackage{graphicx}
+\usepackage{caption}
+%\usepackage{subcaption}
+
+% Markup macros for proof-reading
+\usepackage[normalem]{ulem} % for \sout
+\usepackage{xcolor}
+\newcommand{\ra}{$\rightarrow$}
+\newcommand{\ugh}[1]{\textcolor{red}{\uwave{#1}}} % please rephrase
+\newcommand{\ins}[1]{\textcolor{blue}{\uline{#1}}} % please insert
+\newcommand{\del}[1]{\textcolor{red}{\sout{#1}}} % please delete
+\newcommand{\chg}[2]{\textcolor{red}{\sout{#1}}{\ra}\textcolor{blue}{\uline{#2}}} % please change
+
+% Put edit comments in a really ugly standout display
+\usepackage{ifthen}
+\usepackage{amssymb}
+\newboolean{showcomments}
+\setboolean{showcomments}{true} % toggle to show or hide comments
+\ifthenelse{\boolean{showcomments}}
+  {\newcommand{\nb}[2]{
+    \fcolorbox{gray}{yellow}{\bfseries\sffamily\scriptsize#1}
+    {\sf\small$\blacktriangleright$\textit{#2}$\blacktriangleleft$}
+   }
+   \newcommand{\version}{\emph{\scriptsize$-$working$-$}}
+  }
+  {\newcommand{\nb}[2]{}
+   \newcommand{\version}{}
+  }
+%\ifthenelse{\boolean{showcomments}}
+%  {\newcommand{\ts}[4]{
+%    \fcolorbox{black}{green}{\bfseries\sffamily\scriptsize#1 #2 - (Resp: \textit{#3})}
+%    {\sf\small$\blacktriangleright$\textit{#4}$\blacktriangleleft$}
+%   }
+%  }
+%   {\newcommand{\ts}[2]{}
+%  }	
+
+\newcommand\piergiuseppe[1]{\nb{Pier}{#1}}
+\newcommand\patrizio[1]{\nb{Patrizio}{#1}}
+\newcommand\massimo[1]{\nb{Massimo}{#1}}
+
+%
+\begin{document}
+%
+\frontmatter          % for the preliminaries
+%
+\pagestyle{headings}  % switches on printing of running heads
+\addtocmark{Hamiltonian Mechanics} % additional mark in the TOC
+
+\mainmatter              % start of the contributions
+%
+\title{Systems of Systems Concepts for Cars}
+%
+%\titlerunning{vehicle platooning verification}  % abbreviated title (for running head)
+%                                     also used for the TOC unless
+%                                     \toctitle is used
+%
+
+
+
+\author{
+Eilert Johansson,
+Tony Larsson,
+Maytheewat Aramrattana,
+Patrizio Pelliccione,
+Magnus \AA gren,
+G\"oran Jonsson,
+Rogardt Heldal,
+}
+
+
+%Piergiuseppe Mallozzi\inst{1} \and Massimo Sciancalepore\inst{2} \and
+%Patrizio Pelliccione\inst{3}}
+
+
+%
+%\authorrunning{Piergiuseppe Mallozzi et al.} % abbreviated author list (for running head)
+%
+%%%% list of authors for the TOC (use if author list has to be modified)
+% \tocauthor{Ivar Ekeland, Roger Temam, Jeffrey Dean, David Grove,
+% Craig Chambers, Kim B. Bruce, and Elisa Bertino}
+%
+\institute{Next Generation Electrical Architecture (NGEA) project\\VINNOVA Diarienummer 2014-05599 \\%} %\\
+%WP3, contact: \email{patrizio.pelliccione@gu.se}\\
+% \texttt{http://users/\homedir iekeland/web/welcome.html}
+% \and
+% Universit\'{e} de Paris-Sud,
+% Laboratoire d'Analyse Num\'{e}rique, B\^{a}timent 425,\\
+% F-91405 Orsay Cedex, France}
+}
+
+% %%%template%%%
+
+% \titlerunning{Hamiltonian Mechanics}  % abbreviated title (for running head)
+% %                                     also used for the TOC unless
+% %                                     \toctitle is used
+% %
+% \author{Ivar Ekeland\inst{1} \and Roger Temam\inst{2}
+% Jeffrey Dean \and David Grove \and Craig Chambers \and Kim~B.~Bruce \and
+% Elsa Bertino}
+% %
+% \authorrunning{Ivar Ekeland et al.} % abbreviated author list (for running head)
+% %
+% %%%% list of authors for the TOC (use if author list has to be modified)
+% \tocauthor{Ivar Ekeland, Roger Temam, Jeffrey Dean, David Grove,
+% Craig Chambers, Kim B. Bruce, and Elisa Bertino}
+% %
+% \institute{Princeton University, Princeton NJ 08544, USA,\\
+% \email{I.Ekeland@princeton.edu},\\ WWW home page:
+% \texttt{http://users/\homedir iekeland/web/welcome.html}
+% \and
+% Universit\'{e} de Paris-Sud,
+% Laboratoire d'Analyse Num\'{e}rique, B\^{a}timent 425,\\
+% F-91405 Orsay Cedex, France}
+
+%%%/template%%%%
+
+
+
+
+
+
+\maketitle              % typeset the title of the contribution
+
+%\begin{abstract}
+%Future transportation systems are expected to be Systems of Systems (SoSs) composed of vehicles, pedestrians, roads, signs and other parts of the infrastructure. 
+%
+%\end{abstract}
+
+~\\
+
+%\section{Long abstract}
+A System of Systems (SoS) is a collection of often pre-existing and/or independently owned and managed systems that collectively offer a service that emerges from their collaboration~\cite{SoSInnovation,Fitzgerald2014,SoS}. Prominent examples of SoSs include intelligent transport systems, integrated air defense networks, applications in healthcare and emergency response. The units that compose an SoS are systems themselves and are called constituents. SoSs may evolve as triggered by changes in their operating environment and/or in the goals of the autonomous constituent systems~\cite{Fitzgerald2014,MeaningOfOf}. Evolution might affect the structure and composition of the constituents, functionalities offered, and/or the functionalities quality. Collaboration between SoSs enables new capabilities, but interdependency implies that failures can cascade throughout the SoS, creating additional system failures or development delays.
+
+Future transportation systems will be a heterogeneous mix of items with varying connectivity and interoperability. A mix of new technologies and legacy systems will co-exist to realize a variety of scenarios involving not only connected cars but also smart roads, pedestrians, cyclists, and so on. In other words, future transportation systems are expected to be system of systems, where each constituent system can act as a standalone system, but where the cooperation among the constituent systems will enable new emerging and promising scenarios. Compared to a traditional integrated system, a constituent system within a System of Systems (SoS) has a value in itself and can be used outside the SoS~\cite{Jakob}.
+
+This paper takes a bottom-up analysis of technologies that may be needed in future systems of systems for cars. A reason for going bottom-up is that we have a lot of legacy that is expected to be part of also future cars. One can expect that most of the development in the up-coming decade mainly will be iterative, even if disruptive technologies, services and business models may appear in the same timeframe. Given that the majority of the assumptions in this report are relevant we can foresee a number of requirements for the vehicles and the infra-structure meaning both ICT infrastructure and the physical infrastructure such as roads, signs, buildings etc. In the following we report some essential building blocks necessary to enable future transportation systems:
+
+\subsection*{Distributed end-to-end functionality} 
+
+Not only between nodes in the vehicles but also outside the vehicle - clouds, other cars etc. Connected vehicles can benefit a lot from access to cloud computing based data and services. By cloud or cloud functionality is meant a database centric service available via the Internet used to extend an existing function in a car or to create a new function enabled by cloud data. This means that a cloud function is a function that does something for the car it-self or its driver that is enabled by use of data or services (interpreted data) from the cloud.
+
+\subsection*{Functional safety} 
+
+Functional safety requirements are expected to apply for functions outside the car, but to be able to handle severity one can expect that they not will include operational functions - mainly functions in strategical and tactical planning horizon. However it is important to understand the implication on system design and functional distribution for functional safety. 
+
+\subsection*{Services} 
+
+Services implemented in distributed end-to-end functions will benefit from the possibility to dynamically load software to the on-board electrical architecture. Dynamically loaded software may be executed in one or several physical nodes, and virtual ma-chines may be essential to ensure cyber-security, functional safety and compatibility. 
+
+\subsection*{Connectivity}
+ 
+Connectivity is essential to enable the expected service level in different places in the System of systems. Connectivity may be possible through many different channels as discusses in previous chapters. However there has to be on-board functions that handle graceful degradation of services when connectivity is limited or not available at all. The user shall experience a robust behaviour of the available functions. 
+
+\subsection*{Interoperability} 
+
+Interoperability is the ability of diverse systems to work together. This general definition has been conjugated in many different ways based on the reference application area and on the many different factors and aspects characterizing them. Interoperability involves standards, protocols, and integration and adaptation of interfaces to enable the effective and efficient communication between constituent systems. Interoperability is the ability of two or more constituent systems that are part of SoS to exchange information and to use the information that has been ex-changed. Unambiguous interpretation of shared data between systems is necessary for interoperation, but it is not sufficient. Despite standards for shared data provides specification with the objective to enhance the functionality and interoperability, the data encoded using these standards are not necessarily interoperable. For instance, concepts that have the same labels, and somehow even the same meaning, can be used completely differently in different applications. This is for instance the case of speed within a car that can have different meanings.
+
+\section*{Final remarks}
+As shown by the concerns emerging from the concepts spanning the entire system of systems, engineering effort is not only needed on the different system levels, but also on the level of the system of systems as a whole. With potentially each constituent system being developed by a different organization, a separate set of questions arise with respect to the coordination of engineering efforts: 
+
+\begin{itemize}
+\item How shall creation of requirements on the system of systems as a whole be coordinated? 
+\item What processes are needed to handle development requests between separate systems? 
+\item How shall development of interoperability specifications be coordinated? 
+\end{itemize}
+
+Within the project we will try to give an answer to these questions.
+
+
+\section*{Acknowledgement}
+This work was partially supported by the NGEA Vinnova
+project 
+\bibliographystyle{plain}
+\bibliography{references}
+	
+
+\clearpage
+% \addtocmark[2]{Author Index} % additional numbered TOC entry
+% \renewcommand{\indexname}{Author Index}
+% \printindex
+% \clearpage
+% \addtocmark[2]{Subject Index} % additional numbered TOC entry
+% \markboth{Subject Index}{Subject Index}
+% \renewcommand{\indexname}{Subject Index}
+% \input{subjidx.tex}
+\end{document}
